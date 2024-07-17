@@ -8,7 +8,7 @@ import Home from "./Home.jsx";
 import SearchAppBar from "./SearchAppBar.jsx";
 import Moviedetails from "./Moviedetails.jsx";
 import Createe from "./Createe.jsx";
-
+import Signup from "./Signup.jsx";
 
 const App = () => {
 
@@ -31,10 +31,11 @@ const [curr,setcurr]=useState({})
     <BrowserRouter>
     <Routes>
       <Route path="/">
-        <Route index path="/Login" element={<Login />} />
+        <Route index path="/login" element={<Login />} />
         <Route path="Home" element={<Home data={data} set={setcurr}/>} />
-        <Route path="/Moviedetails" element={<Moviedetails curr={curr}/>}/>
-        <Route path="/Create" element={<Createe/>} />
+        <Route path="/moviedetails" element={<Moviedetails curr={curr}/>}/>
+        <Route path="/create" element={<Createe/>} />
+        <Route path="/signup" element={<Signup/>} />
       </Route>
     </Routes>
   </BrowserRouter>

@@ -5,7 +5,6 @@ import Navibar from "./SearchAppBar";
 import { useNavigate } from 'react-router-dom';
 
 const Home = ({data,set})=>{
-
     const navigate = useNavigate();
 return (
 
@@ -21,7 +20,7 @@ return (
 				<div className="ticket__content">
 					<h4 className="ticket__movie-title">{e.title}</h4>
 					<p className="ticket__movie-slogan">
-						
+					
 					</p>
 					<p className="ticket__current-price"><b>Rating:</b> {e.rating}</p>
                     <div className="radio-input">

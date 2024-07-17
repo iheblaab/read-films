@@ -4,6 +4,8 @@ import axios from "axios";
 
 
 const Createe=()=>{
+  var x = localStorage.getItem('log')
+  console.log(x,'create');
 const [title,settitle]=useState(null);
 const [year,setyear]=useState(null);
 const [genre,setgenre]=useState(null);
@@ -19,9 +21,11 @@ const [country,setcountry]=useState(null);
 const [language,setlanguage]=useState(null);
 const [boxOffice,setboxOffice]=useState(null);
 const [production,setproduction]=useState(null);
-const [id,setid]=useState(null)
+const [id,setid]=useState(x)
 
 const post = () => {
+
+
     axios.post('http://localhost:8080/movie/add', {
         title:title,
         year: year,
@@ -38,7 +42,7 @@ const post = () => {
         language:language,
         boxOffice:boxOffice,
         production:production,
-        id:id
+        users_idusers:id
       })
       .then((res) => {
         console.log(res.data);
@@ -115,7 +119,7 @@ return (
     <input type="text" placeholder="Language" style={{ width: '100%', marginBottom: '10px', padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }} onChange={(e)=>{setlanguage(e.target.value)}} />
     <input type="text" placeholder="Box Office" style={{ width: '100%', marginBottom: '10px', padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }} onChange={(e)=>{setboxOffice(e.target.value)}} />
     <input type="text" placeholder="Production" style={{ width: '100%', marginBottom: '10px', padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }} onChange={(e)=>{setproduction(e.target.value)}}  />
-    <input type="number" placeholder="Id" style={{ width: '100%', marginBottom: '10px', padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }} onChange={(e)=>{setid(e.target.value)}} />
+    {/* <input type="number" placeholder="Id" style={{ width: '100%', marginBottom: '10px', padding: '10px', fontSize: '16px', border: '1px solid #ddd', borderRadius: '5px' }} onChange={(e)=>{setid(e.target.value)}} /> */}
     <button style={{ width: '100%', padding: '10px', fontSize: '16px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={()=>{post()}}>Submit</button>
    
   </div>
